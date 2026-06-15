@@ -59,3 +59,9 @@ Example Use
 	
 	Client
 	$ LD_PRELOAD=./crypthook.so CH_KEY=donthackmebro ncat server 5000
+
+add gcc
+----------------------------
+   gcc -shared -fPIC crypthook.c -o libcrypthook.so -lcrypto
+   gcc tcp_service.c -o srv
+   gcc tcp_client.c -o cli
